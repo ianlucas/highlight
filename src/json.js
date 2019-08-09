@@ -15,13 +15,13 @@ function json(source, defs) {
   function handle_hover(element, path, value) {
     hover_array.forEach(function (listener) {
       listener(element, path, value);
-    })
+    });
   }
 
   function handle_leave(element, path, value) {
     leave_array.forEach(function (listener) {
       listener(element, path, value);
-    })
+    });
   }
 
   function handle_object(object, path, identation) {
