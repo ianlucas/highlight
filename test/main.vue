@@ -3,20 +3,25 @@
 </template>
 
 <style>
-  .key {
+  .hl-key,
+  .hl-name {
     color: red;
   }
 
-  .string {
+  .hl-string {
     color: blue;
   }
 
-  .boolean {
+  .hl-boolean {
     color: purple;
   }
 
-  .number {
+  .hl-number {
     color: green;
+  }
+
+  .hl-pre.invalid {
+    color: #a8a8a8;
   }
 </style>
 
@@ -102,10 +107,63 @@
     testing
   `;
 
+  const some_xml = `
+    <OfertaMalucas>
+      <Oferta>
+        <Nome>Ofertinha maluquinha!</Nome>
+      </Oferta>
+    </OfertaMalucas>
+  `;
+
+  const big_xml = `
+    <CATALOG some-attr="just-trying stuff out">
+  <CD>
+  <TITLE>Empire Burlesque</TITLE>
+  <ARTIST>Bob Dylan</ARTIST>
+  <COUNTRY>USA</COUNTRY>
+  <COMPANY>Columbia</COMPANY>
+  <PRICE>10.90</PRICE>
+  <YEAR>1985</YEAR>
+  <ORACLE>
+  select * from scott.dept;
+  </ORACLE>
+  </CD>
+  <CD>
+  <TITLE>Hide your heart</TITLE>
+  <ARTIST>Bonnie Tyler</ARTIST>
+  <COUNTRY>UK</COUNTRY>
+  <COMPANY>CBS Records</COMPANY>
+  <PRICE>9.90</PRICE>
+  <YEAR>1988</YEAR>
+  </CD>
+  <CD>
+  <TITLE>Greatest Hits</TITLE>
+  <ARTIST>Dolly Parton</ARTIST>
+  <COUNTRY>USA</COUNTRY>
+  <COMPANY>RCA</COMPANY>
+  <PRICE>9.90</PRICE>
+  <YEAR>1982</YEAR>
+  <ORACLE>
+  begin
+  htp.p('This is the test data');
+  end;
+  </ORACLE>
+  </CD>
+  <CD>
+  <TITLE>Still got the blues</TITLE>
+  <ARTIST>Gary Moore</ARTIST>
+  <COUNTRY>UK</COUNTRY>
+  <COMPANY>Virgin records</COMPANY>
+  <PRICE>10.20</PRICE>
+  <YEAR>1990</YEAR>
+  </CD>
+</CATALOG>
+  `;
+
   export default {
     mounted() {
       const target = document.getElementById("target");
-      const code = highlight(code_json);
+      const code = highlight(big_xml, "text/xml");
 
       target.appendChild(code.element);
 

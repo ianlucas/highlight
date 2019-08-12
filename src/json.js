@@ -8,9 +8,9 @@ function json(source, defs) {
 // At each iteration, it will do the proper code highlighting.
 
   const pre = document.createElement("pre");
-  const parsed = JSON.parse(source);
   const hover_array = [];
   const leave_array = [];
+  let parsed;
 
   function handle_hover(element, path, value) {
     hover_array.forEach(function (listener) {
@@ -119,7 +119,18 @@ function json(source, defs) {
     leave_array.push(listener);
   }
 
-  walk(parsed);
+  pre.className = "hl-pre";
+
+// If there are any error in the parsing, we will put the source text
+// inside the pre element.
+
+  try {
+    pre.className += " invalid"
+    parsed = JSON.parse(source);
+    walk(parsed);
+  } catch (e) {
+    pre.textContent = source;
+  }
 
   return Object.freeze({
     element: pre,
@@ -129,4 +140,4 @@ function json(source, defs) {
   });
 }
 
-export default Object.freeze(json);
+export default json;

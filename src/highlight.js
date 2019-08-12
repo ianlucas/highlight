@@ -1,14 +1,19 @@
 import json from "./json";
 import overwrite from "./overwrite";
+import xml from "./xml";
 
 function highlight(
   text,
-  defs = {},
-  mime = "application/json"
+  mime = "application/json",
+  defs = {}
 ) {
   defs = overwrite(defs);
   if (mime === "application/json") {
     return json(text, defs);
+  } else if (mime === "text/xml") {
+    return xml(text, defs);
+  } else {
+    throw new Error("highlight: unsupported mime type");
   }
 }
 

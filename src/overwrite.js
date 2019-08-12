@@ -2,7 +2,12 @@ function overwrite(defs) {
   const default_defs = {
     ident: ("  ")
   };
-  return Object.assign(default_defs, defs)
+  return Object.freeze(
+    Object.assign(
+      default_defs,
+      defs
+    )
+  );
 }
 
-export default Object.freeze(overwrite);
+export default overwrite;
