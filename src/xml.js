@@ -4,7 +4,7 @@ import text from "./text";
 function xml(source, defs) {
   const pre = document.createElement("pre");
   const parser = new DOMParser();
-  const doc = parser.parseFromString(source, 'text/xml');
+  const doc = parser.parseFromString(source, "text/xml");
   const hover_array = [];
   const leave_array = [];
   let error_parsing = false;
@@ -116,7 +116,7 @@ function xml(source, defs) {
 // inside the pre element.
 
   if (error_parsing) {
-    pre.className += " invalid"
+    pre.className += " invalid";
     pre.textContent = source;
   }
 
