@@ -12,7 +12,7 @@ highlight(
 )
 ```
 
-The `defs` is a configuration object. Here's the default settings:
+The `defs` is a configuration object. Current default settings:
 
 ```javascript
 {
