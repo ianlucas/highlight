@@ -7,8 +7,8 @@ Highlight is a library for simple interactive code highlighting.
 ```javascript
 highlight(
   text,
-  defs = {},
   mime = "application/json"
+  defs = {}
 )
 ```
 
