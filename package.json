@@ -1,0 +1,20 @@
+{
+  "name": "highlight",
+  "version": "1.0.0",
+  "description": "A library for simple interactive code highlighting.",
+  "main": "dist/highlight.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianlucas/highlight.git"
+  },
+  "keywords": [
+    "code",
+    "highlighting"
+  ],
+  "author": "Ian Lucas <ianlucas_ferreira@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ianlucas/highlight/issues"
+  },
+  "homepage": "https://github.com/ianlucas/highlight#readme"
+}
