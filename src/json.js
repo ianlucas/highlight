@@ -125,10 +125,10 @@ function json(source, defs) {
 // inside the pre element.
 
   try {
-    pre.className += " invalid"
     parsed = JSON.parse(source);
     walk(parsed);
   } catch (e) {
+    pre.className += " invalid"
     pre.textContent = source;
   }
 
