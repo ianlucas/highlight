@@ -22,17 +22,19 @@ highlight(
 
 ### JSON
 
-* `highlight.element` - The rendered element;
-* `highlight.parsed` - The parsed JSON;
-* `highlight.hover(listener)` - The "hover" event handler;
-* `highlight.leave(listener)` - The "leave" event handler.
+* `code.element` - The rendered element;
+* `code.parsed` - The parsed JSON;
+* `code.path` - Contains every path with its HTMLElement and its value;
+* `code.hover(listener)` - The "hover" event handler;
+* `code.leave(listener)` - The "leave" event handler.
 
 ### XML
 
-* `highlight.element` - The rendered element;
-* `highlight.parsed` - The parsed XML as an object tree;
-* `highlight.hover(listener)` - The "hover" event handler;
-* `highlight.leave(listener)` - The "leave" event handler.
+* `code.element` - The rendered element;
+* `code.parsed` - The parsed XML as an object tree;
+* `code.path` - An empty object;
+* `code.hover(listener)` - The "hover" event handler;
+* `code.leave(listener)` - The "leave" event handler.
 
 `listener` is a function that takes three parameters:
 
