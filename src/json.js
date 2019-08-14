@@ -8,6 +8,7 @@ function json(source, defs) {
 // At each iteration, it will do the proper code highlighting.
 
   const pre = document.createElement("pre");
+  const path_object = {};
   const hover_array = [];
   const leave_array = [];
   let parsed;
@@ -34,6 +35,11 @@ function json(source, defs) {
       const value = object[key];
       const this_path = `${path}.${key}`;
       const key_element = span(`"${key}"`, "key");
+
+      path_object[this_path] = {
+        element: key_element,
+        value
+      };
 
       pre.appendChild(text(inner_identation));
       pre.appendChild(key_element);
@@ -134,6 +140,7 @@ function json(source, defs) {
 
   return Object.freeze({
     element: pre,
+    path: path_object,
     hover,
     leave,
     parsed
