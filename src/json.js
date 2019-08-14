@@ -128,7 +128,7 @@ function json(source, defs) {
     parsed = JSON.parse(source);
     walk(parsed);
   } catch (e) {
-    pre.className += " invalid"
+    pre.className += " invalid";
     pre.textContent = source;
   }
 
