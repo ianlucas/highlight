@@ -66,19 +66,20 @@ function json(source, defs) {
   }
 
   function handle_array(array, path, identation) {
-    pre.appendChild(text("["));
+    const inner_identation = identation + defs.ident;
+    pre.appendChild(text(`[\n${inner_identation}`));
 
     array.forEach(function (value, index) {
       const this_path = `${path}.${index}`;
 
-      walk(value, this_path, identation);
+      walk(value, this_path, inner_identation);
 
       if (array[index + 1]) {
-        pre.appendChild(text(",\n"));
+        pre.appendChild(text(`,\n${inner_identation}`));
       }
     });
 
-    pre.appendChild(text("]"));
+    pre.appendChild(text(`\n${identation}]`));
   }
 
   function handle_string(string) {
