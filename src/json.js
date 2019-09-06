@@ -74,7 +74,7 @@ function json(source, defs) {
       walk(value, this_path, identation);
 
       if (array[index + 1]) {
-        pre.appendChild(text(", "));
+        pre.appendChild(text(",\n"));
       }
     });
 
