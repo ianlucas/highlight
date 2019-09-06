@@ -136,6 +136,7 @@ function json(source, defs) {
   } catch (e) {
     pre.className += " invalid";
     pre.textContent = source;
+    parsed = source;
   }
 
   return Object.freeze({
