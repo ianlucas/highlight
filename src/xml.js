@@ -89,9 +89,9 @@ function xml(source, defs) {
       pre.appendChild(text(identation));
     }
 
-    close_element.appendChild(text("<"));
+    close_element.appendChild(text("</"));
     close_element.appendChild(span(tag, "name"));
-    close_element.appendChild(text("/>"));
+    close_element.appendChild(text(">"));
 
     pre.appendChild(close_element);
     pre.appendChild(text("\n"));
