@@ -74,7 +74,7 @@ function json(source, defs) {
 
       walk(value, this_path, inner_identation);
 
-      if (array[index + 1]) {
+      if (array[index + 1] !== undefined) {
         pre.appendChild(text(`,\n${inner_identation}`));
       }
     });
@@ -91,7 +91,10 @@ function json(source, defs) {
   }
 
   function handle_boolean(boolean) {
-    pre.appendChild(span(boolean, "boolean"));
+    pre.appendChild(span(
+      (boolean === null ? 'null' : boolean),
+      "boolean"
+    ));
   }
 
   function walk(object, path = "", identation = "") {
